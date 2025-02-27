@@ -11,7 +11,12 @@ on_call = True
 
 while on_call:
     word = input('Enter word').upper()
-    output = [phonetic_dict[letter] for letter in word]
+    try:
+        output = [phonetic_dict[letter] for letter in word]
 
-    # new_list =[item for item in list if test]
-    print(output)
+    except KeyError:
+        print("Sorry, only letters in the alphabet please")
+
+    else:
+        print(output)
+
